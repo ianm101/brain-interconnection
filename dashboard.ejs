@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/tailwind.css">
+  </head>
+  <body>
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-shrink-0">
+              <img class="h-8 w-8" src="/img/logo.svg" alt="Logo">
+            </div>
+            <div class="hidden sm:block sm:ml-6">
+              <div class="flex space-x-4">
+                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">To-do List</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Settings</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <div class="flex items-center ml-4">
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">To-do List</a>
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Settings</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="py-10">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="text-xl font-medium mb-4">High Urgency, High Importance</h2>
+            <div class="bg-white p-4 h-80 overflow-y-scroll rounded-lg">
+              <p class="text-gray-400">No items</p>
+            </div>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="text-xl font-medium mb-4">Low Urgency, High Importance</h2>
+            <div class="bg-white p-4 h-80 overflow-y-scroll rounded-lg">
+              <p class="text-gray-400">No items</p>
+            </div>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="text-xl font-medium mb-4">Low Urgency, Low Importance</h2>
+            <div class="bg-white p-4 h-80 overflow-y-scroll rounded-lg">
+              <p class="text-gray-400">No items</p>
+            </div>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="text-xl font-medium mb-4">High Urgency, Low Importance</h2>
+            <div class="bg-white p-4 h-80 overflow-y-scroll rounded-lg">
+              <p class="text-gray-400">No items</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+      <form method="POST" action="/dashboard">
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="to-do-item">To-do item:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to-do-item" type="text" name="toDoItem" placeholder="Enter a new to-do item">
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Add to list
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
