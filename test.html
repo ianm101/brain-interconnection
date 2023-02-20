@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="toptitle">
+            <h1>Importance</h1>
+        </div>
+        <div class="subcontainer">
+            <div class="container-lefttitle">
+                <h1 class="left-title">Urgency</h1>
+            </div>
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="square" id="square1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="square" id="square2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="square" id="square3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="square" id="square4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <label for="text-input">Add a new element:</label>
+        <input type="text" id="text-input">
+        <button onclick="addNewElement()">Add</button>
+    </div>
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+
+        function addNewElement() {
+            var text = document.getElementById("text-input").value;
+            var newElement = document.createElement("div");
+            newElement.className = "element";
+            newElement.innerHTML = text;
+            newElement.draggable = true;
+            newElement.id = "element" + (document.getElementsByClassName("element").length + 1);
+            newElement.addEventListener("dragstart", drag);
+            document.body.appendChild(newElement);
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</body>
+
+</html>
